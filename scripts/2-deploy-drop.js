@@ -2,6 +2,7 @@ import { AddressZero } from "@ethersproject/constants";
 import { readFileSync } from "fs";
 import sdk from "./1-initialize-sdk.js";
 
+
 (async () => {
   try {
     const editionDropAddress = await sdk.deployer.deployEditionDrop({
