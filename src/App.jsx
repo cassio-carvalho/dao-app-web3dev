@@ -1,10 +1,12 @@
 import { AddressZero } from "@ethersproject/constants";
-import { useAddress, useEditionDrop, useMetamask, useToken, useVote } from '@thirdweb-dev/react';
+import { useAddress, useEditionDrop, useMetamask, useNetwork, useToken, useVote } from '@thirdweb-dev/react';
+import { ChainId } from '@thirdweb-dev/sdk';
 import { useEffect, useMemo, useState } from 'react';
 
 const App = () => {
 // Usa o hook connectWallet que o thirdweb nos dá.
   const address = useAddress();
+  const network = useNetwork();
   const connectWithMetamask = useMetamask();
   // console.log(address);
 
@@ -172,6 +174,18 @@ useEffect(() => {
       setIsClaiming(false);
     }
   };
+
+  if (address && (network?.[0].data.chain.id !== ChainId.Rinkeby)) {
+    return (
+      <div className="unsupported-network">
+        <h2>Por favor, conecte-se à rede Rinkeby</h2>
+        <p>
+          Essa dapp só funciona com a rede Rinkeby, por favor 
+          troque de rede na sua carteira.
+        </p>
+      </div>
+    );
+  }
 
   // Caso o usuário ainda não conectou sua carteira, deixe ele chamar connectWallet.
   if(!address){
