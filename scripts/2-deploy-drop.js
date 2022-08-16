@@ -11,7 +11,7 @@ import sdk from "./1-initialize-sdk.js";
       // Uma descrição para a coleção.
       description: 'A DAO responsável por mudar o jogo da sua vida',
       // Uma imagem para a coleção que vai aparecer no OpenSea.
-      image: readFileSync('scripts/assets/capa.jpeg'),
+      image: readFileSync('scripts/assets/cyberpunk_rabbit_1.png'),
       // Nós precisamos passar o endereço da pessoa que vai estar recebendo os rendimentos das vendas dos nfts do módulo.
       // Nós estamos planejando não cobrar as pessoas pelo drop, então passaremos o endereço 0x0
       // você pode configurar isso para sua própria carteira se você quiser cobrar pelo drop.

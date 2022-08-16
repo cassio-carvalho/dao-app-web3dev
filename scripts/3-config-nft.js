@@ -9,7 +9,7 @@ const editionDrop = sdk.getEditionDrop('0xF46BA2e0f616e473CE416713F6a355dc89753B
       {
         name: 'Capa de filiação Game Changer',
         description: 'NFT de acesso à Game Changers DAO',
-        image: readFileSync('scripts/assets/capa.jpeg'),
+        image: readFileSync('scripts/assets/cyberpunk_rabbit_1.png'),
       },
     ]);
     console.log('✅ Novo NFT criado com sucesso!');
